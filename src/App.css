@@ -1,0 +1,176 @@
+/* ==========================================================================
+   Shared Base & Utility Styles
+   ========================================================================== */
+
+.section-wrap {
+  width: min(1180px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* Typography & Accent Styles */
+.eyebrow {
+  margin: 0;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.serif-accent {
+  color: var(--marigold);
+  font-style: italic;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1.05;
+}
+
+.heading-period {
+  color: var(--marigold);
+}
+
+.section-aside {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+/* Common Buttons */
+.button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  border: none;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-dark {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(58, 15, 52, 0.18);
+}
+
+.button-dark:hover {
+  background: #54194b;
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid #c4cbd1;
+}
+
+.button-outline:hover {
+  border-color: var(--marigold);
+  color: var(--purple);
+  background: #fff8e6;
+}
+
+.button-secondary {
+  background: var(--soft-surface);
+  color: var(--purple);
+}
+
+.button-secondary:hover {
+  background: var(--silver);
+}
+
+.button-light {
+  background: var(--marigold);
+  color: var(--ink);
+  box-shadow: 0 4px 14px rgba(234, 170, 0, 0.24);
+}
+
+.button-light:hover {
+  background: #f2bf35;
+}
+
+.text-link {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.text-link:hover {
+  color: var(--marigold);
+}
+
+/* Icon Styles */
+.arrow-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.social-svg-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.inline-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.check-svg {
+  color: #2e7d32;
+  stroke-width: 2.5;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .section-wrap {
+    width: calc(100% - 36px);
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .section-aside {
+    text-align: left;
+  }
+}

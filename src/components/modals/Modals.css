@@ -1,0 +1,259 @@
+/* Modals */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 11, 28, 0.68);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow-y: auto;
+  animation: fadeIn 180ms ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 680px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  animation: modalSlide 220ms ease-out;
+}
+
+.resume-modal {
+  max-width: 800px;
+}
+
+@keyframes modalSlide {
+  from {
+    transform: translateY(16px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #f7f9fa;
+}
+
+.modal-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #fff5d8;
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 26px;
+  color: var(--ink);
+}
+
+.modal-subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.modal-close-btn {
+  background: var(--soft-surface);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 180ms ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--ink);
+  color: var(--marigold);
+}
+
+.modal-body {
+  padding: 28px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.modal-section h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.modal-section p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.modal-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.tag-chip-modal {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.modal-footer {
+  padding: 18px 28px;
+  border-top: 1px solid var(--line);
+  background: #f7f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Resume Modal Specific Styles */
+.resume-body {
+  font-size: 13px;
+}
+
+.resume-section {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.resume-item {
+  margin-bottom: 14px;
+}
+
+.resume-item:last-child {
+  margin-bottom: 0;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.resume-item-header strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.resume-item-header span {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.resume-item-desc {
+  margin: 4px 0 6px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.resume-tags {
+  font-size: 11px;
+  color: var(--purple);
+  font-weight: 500;
+}
+
+.resume-sub-list {
+  margin: 4px 0 0 18px;
+  padding: 0;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.resume-sub-list li {
+  margin-bottom: 4px;
+}
+
+.resume-skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1.6;
+}
+
+.resume-edu-score {
+  font-size: 12px;
+  color: var(--purple);
+}
+
+/* Print Stylesheet for Resume */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .resume-modal,
+  .resume-modal * {
+    visibility: visible;
+  }
+
+  .resume-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+
+  .modal-close-btn,
+  .modal-footer {
+    display: none !important;
+  }
+}

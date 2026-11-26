@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  color: #3a0f34;
+  background: #f7f9fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --ink: #3a0f34;
+  --muted: #706a72;
+  --line: #dde3e8;
+  --purple: #3a0f34;
+  --silver: #dde3e8;
+  --marigold: #eaaa00;
+  --surface: #ffffff;
+  --soft-surface: #f1f4f6;
+  --sans: 'DM Sans', 'Segoe UI', sans-serif;
+  --serif: 'DM Serif Display', Georgia, serif;
+
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  background: #f7f9fa;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--marigold);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #f6d87e;
+  color: var(--ink);
+}

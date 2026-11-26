@@ -1,0 +1,180 @@
+/* Site Header */
+.site-header {
+  width: min(1180px, calc(100% - 64px));
+  height: 78px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(58, 15, 52, 0.1);
+  position: relative;
+  z-index: 50;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.wordmark-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--purple);
+  color: var(--marigold);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  box-shadow: 0 5px 14px rgba(58, 15, 52, 0.18);
+}
+
+.wordmark-name {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 22px);
+}
+
+.main-nav a {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.main-nav a:hover {
+  color: var(--marigold);
+}
+
+.nav-resume-btn {
+  background: var(--soft-surface);
+  color: var(--purple);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms ease;
+  font-family: var(--sans);
+  white-space: nowrap;
+}
+
+.nav-resume-btn:hover {
+  background: var(--purple);
+  color: var(--marigold);
+  transform: translateY(-1px);
+}
+
+.main-nav .nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  padding: 8px 16px;
+  border-radius: 24px;
+  background: var(--marigold);
+  transition: all 180ms ease;
+}
+
+.main-nav .nav-contact:hover {
+  background: var(--ink);
+  color: var(--marigold);
+}
+
+.main-nav .nav-contact:hover svg {
+  color: var(--marigold);
+}
+
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  position: relative;
+  transition: background 180ms ease;
+}
+
+.hamburger-bar::before,
+.hamburger-bar::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 200ms ease;
+}
+
+.hamburger-bar::before {
+  top: -7px;
+}
+
+.hamburger-bar::after {
+  bottom: -7px;
+}
+
+.hamburger-bar.open {
+  background: transparent;
+}
+
+.hamburger-bar.open::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-bar.open::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 920px) {
+  .site-header {
+    width: calc(100% - 36px);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px 24px;
+    gap: 16px;
+    display: none;
+  }
+
+  .main-nav.mobile-active {
+    display: flex;
+  }
+}
