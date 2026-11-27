@@ -28,4 +28,4 @@ The repository is configured to deploy the `my-portfolio` app automatically from
 
 The public site will be available at:
 
-<https://pajju1905.github.io/portfolio/>
+<https://pajju1905.github.io/my-portfolio/>
